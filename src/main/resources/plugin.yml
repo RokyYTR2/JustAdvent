@@ -3,24 +3,24 @@ version: '0.0.1'
 main: dev.meyba.justAdvent.JustAdvent
 api-version: '1.21'
 authors: [ Meyba._., Jezevcik20 ]
-description: Just a advent plugin.
+description: Just an advent plugin.
 
 commands:
   advent:
-    description: Otevře adventní kalendář
+    description: Opens the advent calendar
     usage: /<command> [open|reload|help]
-    aliases: [adventcalendar, ac]
+    aliases: [adventcalendar, ac, advent, calendar]
 
 permissions:
-  justadvent.use:
-    description: Umožňuje otevřít adventní kalendář
-    default: true
-  justadvent.reload:
-    description: Umožňuje znovu načíst konfiguraci
-    default: op
   justadvent.*:
-    description: Všechna oprávnění JustAdvent
+    description: All JustAdvent permissions
     default: op
     children:
       justadvent.use: true
       justadvent.reload: true
+  justadvent.use:
+    description: Allows opening the advent calendar
+    default: true
+  justadvent.reload:
+    description: Allows reloading the configuration
+    default: op
