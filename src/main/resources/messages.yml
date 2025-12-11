@@ -1,5 +1,8 @@
-# Messages for JustAdvent plugin
-
+# =======================
+# JustAdvent Messages
+# =======================
+# Prefix used for all plugin messages.
+# =======================
 prefix: "§x§C§4§1§E§3§A§lᴊ§x§C§6§2§3§3§B§lᴜ§x§C§8§2§8§3§C§lꜱ§x§C§A§2§D§3§D§lᴛ§x§C§C§3§2§3§E§lᴀ§x§C§E§3§7§3§F§lᴅ§x§D§0§3§C§4§0§lᴠ§x§D§2§4§1§4§1§lᴇ§x§D§4§4§6§4§2§lɴ§x§D§6§4§B§4§3§lᴛ §8» §f"
 
 # Messages for GUI
