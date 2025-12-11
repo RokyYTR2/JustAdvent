@@ -3,7 +3,7 @@ version: '0.0.1'
 main: dev.meyba.justAdvent.JustAdvent
 api-version: '1.21'
 authors: [ Meyba._., Jezevcik20 ]
-description: Just a advent calendar plugin.
+description: Just a advent plugin.
 
 commands:
   advent:
