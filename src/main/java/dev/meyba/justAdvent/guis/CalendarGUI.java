@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CalendarGUI implements Listener {
-
     private static final String GUI_NAME_PREFIX = ChatColor.translateAlternateColorCodes('&', "&lᴀᴅᴠᴇɴᴛ ᴄᴀʟᴇɴᴅᴀʀ");
     private final JustAdvent plugin;
     private final ConfigManager configManager;
@@ -33,9 +32,6 @@ public class CalendarGUI implements Listener {
         this.playerDataManager = playerDataManager;
     }
 
-    /**
-     * Opens the calendar GUI for a player
-     */
     public void openCalendar(Player player) {
         int size = configManager.getGuiSize();
         Inventory inventory = Bukkit.createInventory(null, size, GUI_NAME_PREFIX);
@@ -49,10 +45,8 @@ public class CalendarGUI implements Listener {
     private void setupInventory(Inventory inventory, Player player) {
         inventory.clear();
 
-        // Add gray glass pane border
         ItemStack grayGlassPane = createItem(Material.GRAY_STAINED_GLASS_PANE, "§r", Collections.emptyList());
 
-        // Top and bottom rows
         for (int i = 0; i < 9; i++) {
             inventory.setItem(i, grayGlassPane);
         }
@@ -60,7 +54,6 @@ public class CalendarGUI implements Listener {
             inventory.setItem(i, grayGlassPane);
         }
 
-        // Left and right columns
         for (int i = 9; i < 45; i += 9) {
             inventory.setItem(i, grayGlassPane);
             inventory.setItem(i + 8, grayGlassPane);
@@ -71,39 +64,28 @@ public class CalendarGUI implements Listener {
         int currentDay = now.getDayOfMonth();
         Month currentMonth = now.getMonth();
 
-        // Fill inventory with items for each day (1-24)
         for (int day = 1; day <= 24; day++) {
             ItemStack item;
 
-            // Check if player has already claimed the reward
             boolean claimed = playerDataManager.hasClaimed(player.getUniqueId(), day, currentYear);
 
-            // Check if this day has arrived
             boolean isDecember = (currentMonth == Month.DECEMBER);
             boolean dayAvailable = isDecember && currentDay >= day;
 
             if (claimed) {
-                // Already claimed reward
                 item = createClaimedItem(day);
             } else if (!dayAvailable) {
-                // Day hasn't arrived yet or it's not December
                 item = createLockedItem(day);
             } else {
-                // Available reward
                 item = createRewardItem(day);
             }
 
-            // Place item in GUI (slots 10-15, 19-24, 28-33, 37-42 for nice layout)
             int slot = getSlotForDay(day);
             inventory.setItem(slot, item);
         }
     }
 
-    /**
-     * Calculates slot for given day (creates nice layout)
-     */
     private int getSlotForDay(int day) {
-        // Layout with 6 items per row, starting from slot 10
         int row = (day - 1) / 6;
         int col = (day - 1) % 6;
         return 10 + (row * 9) + col;
@@ -120,9 +102,6 @@ public class CalendarGUI implements Listener {
         return item;
     }
 
-    /**
-     * Creates item for already claimed reward
-     */
     private ItemStack createClaimedItem(int day) {
         Material material = Material.getMaterial(configManager.getClaimedItemMaterial());
         if (material == null) material = Material.LIME_STAINED_GLASS_PANE;
@@ -137,9 +116,6 @@ public class CalendarGUI implements Listener {
         return item;
     }
 
-    /**
-     * Creates item for locked reward
-     */
     private ItemStack createLockedItem(int day) {
         Material material = Material.getMaterial(configManager.getLockedItemMaterial());
         if (material == null) material = Material.RED_STAINED_GLASS_PANE;
@@ -154,9 +130,6 @@ public class CalendarGUI implements Listener {
         return item;
     }
 
-    /**
-     * Creates item for available reward
-     */
     private ItemStack createRewardItem(int day) {
         Material material = Material.getMaterial(configManager.getRewardMaterial(day));
         if (material == null) material = Material.CHEST;
@@ -171,9 +144,6 @@ public class CalendarGUI implements Listener {
         return item;
     }
 
-    /**
-     * Handler for inventory clicks
-     */
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
         String title = event.getView().getTitle();
@@ -181,32 +151,26 @@ public class CalendarGUI implements Listener {
             return;
         }
 
-        event.setCancelled(true); // Block item movement
+        event.setCancelled(true);
 
-        if (!(event.getWhoClicked() instanceof Player)) {
+        if (!(event.getWhoClicked() instanceof Player player)) {
             return;
         }
 
-        Player player = (Player) event.getWhoClicked();
         ItemStack clickedItem = event.getCurrentItem();
 
         if (clickedItem == null || clickedItem.getType() == Material.AIR) {
             return;
         }
 
-        // Determine which day was clicked
         int day = getDayFromSlot(event.getSlot());
         if (day == -1) {
-            return; // Invalid slot
+            return;
         }
 
-        // Process click
         handleDayClick(player, day);
     }
 
-    /**
-     * Gets day from slot number
-     */
     private int getDayFromSlot(int slot) {
         for (int day = 1; day <= 24; day++) {
             if (getSlotForDay(day) == slot) {
@@ -216,22 +180,17 @@ public class CalendarGUI implements Listener {
         return -1;
     }
 
-    /**
-     * Handles day click
-     */
     private void handleDayClick(Player player, int day) {
         LocalDate now = LocalDate.now();
         int currentYear = now.getYear();
         int currentDay = now.getDayOfMonth();
         Month currentMonth = now.getMonth();
 
-        // Check if player has already claimed the reward
         if (playerDataManager.hasClaimed(player.getUniqueId(), day, currentYear)) {
             player.sendMessage(configManager.getMessage("reward.already-claimed", "{day}", String.valueOf(day)));
             return;
         }
 
-        // Check if this day has arrived
         boolean isDecember = (currentMonth == Month.DECEMBER);
         if (!isDecember) {
             player.sendMessage(configManager.getMessage("reward.not-december"));
@@ -244,13 +203,9 @@ public class CalendarGUI implements Listener {
             return;
         }
 
-        // Give player reward
         giveReward(player, day, currentYear);
     }
 
-    /**
-     * Gives player reward for given day
-     */
     private void giveReward(Player player, int day, int year) {
         List<String> commands = configManager.getRewardCommands(day);
 
@@ -259,7 +214,6 @@ public class CalendarGUI implements Listener {
             return;
         }
 
-        // Execute all commands
         for (String command : commands) {
             String finalCommand = command.replace("{player}", player.getName());
             try {
@@ -272,13 +226,10 @@ public class CalendarGUI implements Listener {
             }
         }
 
-        // Mark as claimed
         playerDataManager.setClaimed(player.getUniqueId(), day, year);
 
-        // Send message
         player.sendMessage(configManager.getMessage("reward.claimed", "{day}", String.valueOf(day)));
 
-        // Close and reopen GUI for update
         player.closeInventory();
         Bukkit.getScheduler().runTaskLater(plugin, () -> openCalendar(player), 2L);
     }

@@ -11,7 +11,6 @@ import java.io.InputStreamReader;
 import java.util.List;
 
 public class ConfigManager {
-
     private final JavaPlugin plugin;
     private FileConfiguration config;
     private FileConfiguration messages;
@@ -22,19 +21,16 @@ public class ConfigManager {
     }
 
     public void loadConfigs() {
-        // Load config.yml
         plugin.saveDefaultConfig();
         plugin.reloadConfig();
         config = plugin.getConfig();
 
-        // Load messages.yml
         File messagesFile = new File(plugin.getDataFolder(), "messages.yml");
         if (!messagesFile.exists()) {
             plugin.saveResource("messages.yml", false);
         }
         messages = YamlConfiguration.loadConfiguration(messagesFile);
 
-        // Load defaults from jar
         InputStream defMessagesStream = plugin.getResource("messages.yml");
         if (defMessagesStream != null) {
             YamlConfiguration defMessages = YamlConfiguration.loadConfiguration(new InputStreamReader(defMessagesStream));
@@ -44,14 +40,6 @@ public class ConfigManager {
 
     public void reloadConfigs() {
         loadConfigs();
-    }
-
-    public FileConfiguration getConfig() {
-        return config;
-    }
-
-    public FileConfiguration getMessages() {
-        return messages;
     }
 
     public String getMessage(String path) {
@@ -78,7 +66,6 @@ public class ConfigManager {
 
     public int getGuiSize() {
         int size = config.getInt("gui-size", 54);
-        // Ensure size is valid (multiple of 9, max 54)
         if (size % 9 != 0 || size < 9 || size > 54) {
             size = 54;
         }

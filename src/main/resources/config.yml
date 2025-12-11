@@ -2,7 +2,7 @@
 # Advent calendar with daily rewards
 
 # GUI inventory title
-gui-title: "&c&lᴀᴅᴠᴇɴᴛ ᴄᴀʟᴇɴᴅᴀʀ 2024"
+gui-title: "&c&lᴀᴅᴠᴇɴᴛ ᴄᴀʟᴇɴᴅᴀʀ"
 
 # GUI size (must be multiple of 9, max 54)
 gui-size: 54

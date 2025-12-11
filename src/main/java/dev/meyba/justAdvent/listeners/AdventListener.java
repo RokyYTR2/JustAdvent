@@ -12,7 +12,6 @@ import java.time.LocalDate;
 import java.time.Month;
 
 public class AdventListener implements Listener {
-
     private final JustAdvent plugin;
     private final ConfigManager configManager;
     private final PlayerDataManager playerDataManager;
@@ -27,13 +26,11 @@ public class AdventListener implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        // Check if it's December and notify player about available rewards
         LocalDate now = LocalDate.now();
         if (now.getMonth() == Month.DECEMBER) {
             int currentDay = now.getDayOfMonth();
             int currentYear = now.getYear();
 
-            // Count unclaimed rewards
             int unclaimedCount = 0;
             for (int day = 1; day <= Math.min(currentDay, 24); day++) {
                 if (!playerDataManager.hasClaimed(player.getUniqueId(), day, currentYear)) {
@@ -41,7 +38,6 @@ public class AdventListener implements Listener {
                 }
             }
 
-            // Notify player if they have unclaimed rewards
             if (unclaimedCount > 0) {
                 String message = configManager.getMessage("notification.unclaimed-rewards", "{count}", String.valueOf(unclaimedCount));
                 player.sendMessage(message);

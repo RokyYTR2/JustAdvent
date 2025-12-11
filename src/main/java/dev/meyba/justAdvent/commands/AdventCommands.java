@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AdventCommands implements CommandExecutor, TabCompleter {
-
     private final JustAdvent plugin;
     private final ConfigManager configManager;
     private final PlayerDataManager playerDataManager;
@@ -29,19 +28,16 @@ public class AdventCommands implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        // If no arguments, open GUI
         if (args.length == 0) {
-            if (!(sender instanceof Player)) {
+            if (!(sender instanceof Player player)) {
                 sender.sendMessage(configManager.getMessage("command.only-player"));
                 return true;
             }
 
-            Player player = (Player) sender;
             calendarGUI.openCalendar(player);
             return true;
         }
 
-        // Subcommands
         String subCommand = args[0].toLowerCase();
 
         switch (subCommand) {
@@ -57,12 +53,11 @@ public class AdventCommands implements CommandExecutor, TabCompleter {
                 return true;
 
             case "open":
-                if (!(sender instanceof Player)) {
+                if (!(sender instanceof Player player)) {
                     sender.sendMessage(configManager.getMessage("command.only-player"));
                     return true;
                 }
 
-                Player player = (Player) sender;
                 calendarGUI.openCalendar(player);
                 return true;
 
@@ -98,7 +93,6 @@ public class AdventCommands implements CommandExecutor, TabCompleter {
                 completions.add("reload");
             }
 
-            // Filter based on what user has typed
             String input = args[0].toLowerCase();
             completions.removeIf(s -> !s.toLowerCase().startsWith(input));
         }
