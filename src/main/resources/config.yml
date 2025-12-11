@@ -1,0 +1,234 @@
+# JustAdvent Configuration
+# Advent calendar with daily rewards
+
+# GUI inventory title
+gui-title: "&c&lᴀᴅᴠᴇɴᴛ ᴄᴀʟᴇɴᴅᴀʀ 2024"
+
+# GUI size (must be multiple of 9, max 54)
+gui-size: 54
+
+# Rewards for each day (1-24)
+# Format: commands are executed for the player, {player} will be replaced with player name
+rewards:
+  1:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 1ꜱᴛ"
+    material: SNOWBALL
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l3x ɢᴏʟᴅ ɪɴɢᴏᴛ"
+    commands:
+      - "give {player} gold_ingot 3"
+  2:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 2ɴᴅ"
+    material: SNOW_BLOCK
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l5x ᴅɪᴀᴍᴏɴᴅ"
+    commands:
+      - "give {player} diamond 5"
+  3:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 3ʀᴅ"
+    material: ICE
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ᴇɴᴄʜᴀɴᴛᴇᴅ ꜱᴡᴏʀᴅ"
+    commands:
+      - "give {player} diamond_sword{Enchantments:[{id:sharpness,lvl:3}]} 1"
+  4:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 4ᴛʜ"
+    material: PACKED_ICE
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l10x ᴇᴍᴇʀᴀʟᴅ"
+    commands:
+      - "give {player} emerald 10"
+  5:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 5ᴛʜ"
+    material: RED_WOOL
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l64x ᴄᴏᴏᴋᴇᴅ ʙᴇᴇꜰ"
+    commands:
+      - "give {player} cooked_beef 64"
+  6:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 6ᴛʜ"
+    material: GREEN_WOOL
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ᴇʟʏᴛʀᴀ"
+    commands:
+      - "give {player} elytra 1"
+  7:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 7ᴛʜ"
+    material: CHEST
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l$1000"
+    commands:
+      - "eco give {player} 1000"
+  8:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 8ᴛʜ"
+    material: GOLDEN_APPLE
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l5x ɢᴏʟᴅᴇɴ ᴀᴘᴘʟᴇ"
+    commands:
+      - "give {player} golden_apple 5"
+  9:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 9ᴛʜ"
+    material: ENCHANTED_GOLDEN_APPLE
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l2x ɴᴏᴛᴄʜ ᴀᴘᴘʟᴇ"
+    commands:
+      - "give {player} enchanted_golden_apple 2"
+  10:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 10ᴛʜ"
+    material: NETHERITE_INGOT
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l3x ɴᴇᴛʜᴇʀɪᴛᴇ ɪɴɢᴏᴛ"
+    commands:
+      - "give {player} netherite_ingot 3"
+  11:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 11ᴛʜ"
+    material: DIAMOND_PICKAXE
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ᴇɴᴄʜᴀɴᴛᴇᴅ ᴘɪᴄᴋᴀxᴇ"
+    commands:
+      - "give {player} diamond_pickaxe{Enchantments:[{id:efficiency,lvl:5},{id:fortune,lvl:3}]} 1"
+  12:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 12ᴛʜ"
+    material: EXPERIENCE_BOTTLE
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l64x xᴘ ʙᴏᴛᴛʟᴇꜱ"
+    commands:
+      - "give {player} experience_bottle 64"
+  13:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 13ᴛʜ"
+    material: BEACON
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ʙᴇᴀᴄᴏɴ"
+    commands:
+      - "give {player} beacon 1"
+  14:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 14ᴛʜ"
+    material: TOTEM_OF_UNDYING
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ᴛᴏᴛᴇᴍ ᴏꜰ ᴜɴᴅʏɪɴɢ"
+    commands:
+      - "give {player} totem_of_undying 1"
+  15:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 15ᴛʜ"
+    material: NETHER_STAR
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l3x ɴᴇᴛʜᴇʀ ꜱᴛᴀʀ"
+    commands:
+      - "give {player} nether_star 3"
+  16:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 16ᴛʜ"
+    material: DIAMOND_CHESTPLATE
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ᴇɴᴄʜᴀɴᴛᴇᴅ ᴀʀᴍᴏʀ ꜱᴇᴛ"
+    commands:
+      - "give {player} diamond_helmet{Enchantments:[{id:protection,lvl:4}]} 1"
+      - "give {player} diamond_chestplate{Enchantments:[{id:protection,lvl:4}]} 1"
+      - "give {player} diamond_leggings{Enchantments:[{id:protection,lvl:4}]} 1"
+      - "give {player} diamond_boots{Enchantments:[{id:protection,lvl:4}]} 1"
+  17:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 17ᴛʜ"
+    material: ENDER_PEARL
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l16x ᴇɴᴅᴇʀ ᴘᴇᴀʀʟ"
+    commands:
+      - "give {player} ender_pearl 16"
+  18:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 18ᴛʜ"
+    material: SHULKER_BOX
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l3x ꜱʜᴜʟᴋᴇʀ ʙᴏx"
+    commands:
+      - "give {player} shulker_box 3"
+  19:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 19ᴛʜ"
+    material: DRAGON_HEAD
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ᴅʀᴀɢᴏɴ ʜᴇᴀᴅ"
+    commands:
+      - "give {player} dragon_head 1"
+  20:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 20ᴛʜ"
+    material: ELYTRA
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ᴇɴᴄʜᴀɴᴛᴇᴅ ᴇʟʏᴛʀᴀ"
+    commands:
+      - "give {player} elytra{Enchantments:[{id:unbreaking,lvl:3},{id:mending,lvl:1}]} 1"
+  21:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 21ꜱᴛ"
+    material: TRIDENT
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ᴇɴᴄʜᴀɴᴛᴇᴅ ᴛʀɪᴅᴇɴᴛ"
+    commands:
+      - "give {player} trident{Enchantments:[{id:loyalty,lvl:3},{id:impaling,lvl:5}]} 1"
+  22:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 22ɴᴅ"
+    material: NETHERITE_SWORD
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ɴᴇᴛʜᴇʀɪᴛᴇ ꜱᴡᴏʀᴅ"
+    commands:
+      - "give {player} netherite_sword{Enchantments:[{id:sharpness,lvl:5},{id:fire_aspect,lvl:2},{id:looting,lvl:3}]} 1"
+  23:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 23ʀᴅ"
+    material: ENCHANTING_TABLE
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l$5000 ᴀɴᴅ 10x ᴅɪᴀᴍᴏɴᴅ ʙʟᴏᴄᴋ"
+    commands:
+      - "eco give {player} 5000"
+      - "give {player} diamond_block 10"
+  24:
+    display-name: "&c&lᴅᴇᴄᴇᴍʙᴇʀ 24ᴛʜ - ꜱᴘᴇᴄɪᴀʟ ʀᴇᴡᴀʀᴅ"
+    material: DRAGON_EGG
+    lore:
+      - "&7ᴄʟɪᴄᴋ ᴛᴏ ᴄʟᴀɪᴍ ʀᴇᴡᴀʀᴅ!"
+      - "&e&l1x ᴅʀᴀɢᴏɴ ᴇɢɢ"
+      - "&e&l$10000"
+      - "&e&l64x ɴᴇᴛʜᴇʀɪᴛᴇ ɪɴɢᴏᴛ"
+    commands:
+      - "give {player} dragon_egg 1"
+      - "eco give {player} 10000"
+      - "give {player} netherite_ingot 64"
+
+# Item for already claimed reward
+claimed-item:
+  material: LIME_STAINED_GLASS_PANE
+  display-name: "&a&lᴄʟᴀɪᴍᴇᴅ ᴅᴀʏ {day}"
+  lore:
+    - "&aʏᴏᴜ ᴀʟʀᴇᴀᴅʏ ᴄʟᴀɪᴍᴇᴅ ᴛʜɪꜱ ʀᴇᴡᴀʀᴅ!"
+
+# Item for locked day (hasn't arrived yet)
+locked-item:
+  material: RED_STAINED_GLASS_PANE
+  display-name: "&c&lʟᴏᴄᴋᴇᴅ - ᴅᴇᴄᴇᴍʙᴇʀ {day}"
+  lore:
+    - "&cᴛʜɪꜱ ᴅᴀʏ ʜᴀꜱɴ'ᴛ ᴀʀʀɪᴠᴇᴅ ʏᴇᴛ!"
+    - "&cᴡᴀɪᴛ ᴜɴᴛɪʟ ᴅᴇᴄᴇᴍʙᴇʀ {day}"
+
+# Item for available reward
+available-item:
+  material: YELLOW_STAINED_GLASS_PANE
+  display-name: "&e&lᴀᴠᴀɪʟᴀʙʟᴇ - ᴅᴇᴄᴇᴍʙᴇʀ {day}"
+  lore:
+    - "&eᴄʟɪᴄᴋ ᴛᴏ ᴘʀᴇᴠɪᴇᴡ ʀᴇᴡᴀʀᴅ!"

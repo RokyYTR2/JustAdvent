@@ -1,0 +1,30 @@
+# Messages for JustAdvent plugin
+
+prefix: "§x§C§4§1§E§3§A§lᴊ§x§C§6§2§3§3§B§lᴜ§x§C§8§2§8§3§C§lꜱ§x§C§A§2§D§3§D§lᴛ§x§C§C§3§2§3§E§lᴀ§x§C§E§3§7§3§F§lᴅ§x§D§0§3§C§4§0§lᴠ§x§D§2§4§1§4§1§lᴇ§x§D§4§4§6§4§2§lɴ§x§D§6§4§B§4§3§lᴛ §8» §f"
+
+# Messages for GUI
+gui:
+  opened: "{prefix}&aᴀᴅᴠᴇɴᴛ ᴄᴀʟᴇɴᴅᴀʀ ᴏᴘᴇɴᴇᴅ!"
+
+# Messages for rewards
+reward:
+  claimed: "{prefix}&aꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴄʟᴀɪᴍᴇᴅ ʀᴇᴡᴀʀᴅ ꜰᴏʀ ᴅᴇᴄᴇᴍʙᴇʀ {day}!"
+  already-claimed: "{prefix}&cʏᴏᴜ ᴀʟʀᴇᴀᴅʏ ᴄʟᴀɪᴍᴇᴅ ᴛʜᴇ ʀᴇᴡᴀʀᴅ ꜰᴏʀ ᴅᴇᴄᴇᴍʙᴇʀ {day}!"
+  locked: "{prefix}&cᴛʜɪꜱ ᴅᴀʏ ʜᴀꜱɴ'ᴛ ᴀʀʀɪᴠᴇᴅ ʏᴇᴛ! ᴡᴀɪᴛ ᴜɴᴛɪʟ ᴅᴇᴄᴇᴍʙᴇʀ {day}."
+  not-december: "{prefix}&cᴀᴅᴠᴇɴᴛ ᴄᴀʟᴇɴᴅᴀʀ ɪꜱ ᴏɴʟʏ ᴀᴠᴀɪʟᴀʙʟᴇ ɪɴ ᴅᴇᴄᴇᴍʙᴇʀ!"
+
+# Messages for commands
+command:
+  no-permission: "{prefix}&cʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ꜰᴏʀ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ!"
+  reload: "{prefix}&aᴄᴏɴꜰɪɢᴜʀᴀᴛɪᴏɴ ʜᴀꜱ ʙᴇᴇɴ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ʀᴇʟᴏᴀᴅᴇᴅ!"
+  only-player: "{prefix}&cᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜꜱᴇᴅ ʙʏ ᴀ ᴘʟᴀʏᴇʀ!"
+  unknown: "{prefix}&cᴜɴᴋɴᴏᴡɴ ᴄᴏᴍᴍᴀɴᴅ! ᴜꜱᴇ /advent help"
+
+# Messages for notifications
+notification:
+  unclaimed-rewards: "{prefix}&eʏᴏᴜ ʜᴀᴠᴇ {count} ᴜɴᴄʟᴀɪᴍᴇᴅ ᴀᴅᴠᴇɴᴛ ʀᴇᴡᴀʀᴅꜱ! ᴜꜱᴇ /advent ᴛᴏ ᴄʟᴀɪᴍ ᴛʜᴇᴍ."
+
+# Messages for errors
+error:
+  invalid-day: "{prefix}&cᴇʀʀᴏʀ: ɪɴᴠᴀʟɪᴅ ᴄᴀʟᴇɴᴅᴀʀ ᴅᴀʏ!"
+  command-failed: "{prefix}&cᴇʀʀᴏʀ ᴇxᴇᴄᴜᴛɪɴɢ ʀᴇᴡᴀʀᴅ ᴄᴏᴍᴍᴀɴᴅ!"

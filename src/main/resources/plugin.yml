@@ -3,4 +3,24 @@ version: '0.0.1'
 main: dev.meyba.justAdvent.JustAdvent
 api-version: '1.21'
 authors: [ Meyba._., Jezevcik20 ]
-description: Just a advent plugin.
+description: Adventní kalendář s denními odměnami - podobný AxCalendar
+
+commands:
+  advent:
+    description: Otevře adventní kalendář
+    usage: /<command> [open|reload|help]
+    aliases: [adventcalendar, ac]
+
+permissions:
+  justadvent.use:
+    description: Umožňuje otevřít adventní kalendář
+    default: true
+  justadvent.reload:
+    description: Umožňuje znovu načíst konfiguraci
+    default: op
+  justadvent.*:
+    description: Všechna oprávnění JustAdvent
+    default: op
+    children:
+      justadvent.use: true
+      justadvent.reload: true
